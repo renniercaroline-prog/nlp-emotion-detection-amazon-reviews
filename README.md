@@ -2,7 +2,7 @@ Consumer Satisfaction Prediction with Emotion Detection
 
 Overview
 
-This project predicts customer satisfaction from Amazon Fine Food Reviews by analyzing the emotions hidden in review text. Using Google’s GoEmotions model (27 emotions), it shows how emotions are a powerful took for understanding product performance — going beyond star ratings.
+This project builds a machine learning model to predict customer satisfaction from Amazon Fine Food Reviews by extracting emotion features from review text. Using Google’s GoEmotions transformer model (27-class emotion classifier via HuggingFace), each review is converted into an emotion probability vector. These emotion embeddings are then used as input features for supervised classification (Random Forest, cross-validated AUC), demonstrating that emotion-based representations are highly predictive of product satisfaction and provide richer insight than star ratings alone.
 
 What I found:
 
