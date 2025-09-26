@@ -77,9 +77,6 @@ def evaluate_emotion_category(data, emotions, category_name):
         'model': rf_model
     }
 
-# ==============================================================================
-# PART 1: INDIVIDUAL EMOTION ANALYSIS BY CATEGORY
-# ==============================================================================
 
 # Evaluate each emotion category
 results_positive = evaluate_emotion_category(df_clean, positive_emotions, "Positive")
@@ -94,9 +91,6 @@ print(f"Negative emotions only ({results_negative['n_features']} features): AUC 
 print(f"Ambiguous emotions only ({results_ambiguous['n_features']} features): AUC = {results_ambiguous['auc']:.3f}")
 print(f"All emotions ({results_all['n_features']} features): AUC = {results_all['auc']:.3f}")
 
-# ==============================================================================
-# PART 2: AMBIGUOUS EMOTIONS DEEP DIVE
-# ==============================================================================
 
 print("\n=== AMBIGUOUS EMOTIONS ANALYSIS ===")
 
@@ -129,9 +123,6 @@ results_mixed = evaluate_emotion_category(
 
 print(f"\nAmbiguous + top 3 positive + top 3 negative: AUC = {results_mixed['auc']:.3f}")
 
-# ==============================================================================
-# PART 3: INTERACTION TERMS ANALYSIS
-# ==============================================================================
 
 print("\n=== INTERACTION TERMS ANALYSIS ===")
 
@@ -210,10 +201,6 @@ results_full = evaluate_emotion_category(
 
 print(f"Original + interactions ({len(emotion_cols) + len(interaction_terms)} features): AUC = {results_full['auc']:.3f}")
 
-# ==============================================================================
-# PART 4: FEATURE IMPORTANCE ANALYSIS
-# ==============================================================================
-
 print("\n=== COMPREHENSIVE FEATURE IMPORTANCE ===")
 
 # Get top features from full model
@@ -238,9 +225,6 @@ if interactions_in_top20:
     for i, (feature, importance) in enumerate(list(interaction_importance.items())[:10]):
         print(f"{i+1}. {feature}: {importance:.4f}")
 
-# ==============================================================================
-# PART 5: AMBIGUOUS EMOTIONS INTERACTION ANALYSIS
-# ==============================================================================
 
 print("\n=== AMBIGUOUS EMOTIONS INTERACTION EFFECTS ===")
 
@@ -296,9 +280,6 @@ for ambiguous_emotion in ambiguous_emotions:
         for j, (term, imp) in enumerate(list(interaction_importance.items())[:3]):
             print(f"    {term}: {imp:.4f}")
 
-# ==============================================================================
-# PART 6: SUMMARY AND RECOMMENDATIONS
-# ==============================================================================
 
 print("\n" + "=" * 60)
 print("COMPREHENSIVE ANALYSIS SUMMARY")
