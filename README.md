@@ -24,9 +24,11 @@ Method
 	3.	Modeling – Random Forest classification with AUC evaluation.
 
 Applications
+
 	•	Customer Experience: Identify hidden pain points that stars/liking scores miss.
 	•	Product Development: Detect emotional drift over time as products evolve.
 	•	Market Insights: Compare products by emotional signature, not just numeric averages.
 
 Tech Stack
+
 	•	Python: pandas, numpy, HuggingFace Transformers
